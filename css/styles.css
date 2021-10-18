@@ -5,8 +5,17 @@ body {
 
 .bg-image {
   background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/doctor.jpg");
-  height: 100vh;
+
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #6ECB63;
+}
+
+.doctor-form {
+  background-color: #6ECB63;
+  width: 75%;
 
 }
 
@@ -69,3 +78,8 @@ body {
   padding-bottom: 30px;
   text-align: center;
 }
+
+input[type=text]: focus {
+  border: none;
+}
+
