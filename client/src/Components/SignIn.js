@@ -44,7 +44,7 @@ function SignIn() {
 return (
 <div className="container p-5">
 <Link to="/"><button className="btn btn-danger m-3">Back</button></Link><br/>
- <div className="bg-info border rounded text-light p-2"><h2>Login</h2></div>
+ <div className="bg-success border rounded text-light p-2"><h2>Login</h2></div>
   <div className="container shadow border rounded">
   <form onSubmit={submit}>
   <div className="m-3">
@@ -59,7 +59,7 @@ return (
   
   <button type="submit" className="btn btn-primary m-3">Submit</button>
 </form>
-<center><p>Are you a Doctor? <Link to="/DoctorSignIn">Sign In here</Link></p></center>
+<center><p> New user ?<Link to="/SignUp">Sign Up here</Link></p></center>
 </div>
 </div>
     )

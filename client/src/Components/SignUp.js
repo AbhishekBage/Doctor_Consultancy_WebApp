@@ -47,7 +47,7 @@ function SignUp() {
     return (
         <div className="container ">
         <Link to="/"><button className="btn btn-danger m-3">Back</button></Link><br/>
-         <div className="text-light border rounded p-2 bg-secondary"><h1 > User SignUp</h1></div>
+         <div className="text-light border rounded p-2 bg-success"><h1 > User SignUp</h1></div>
           <div className="container shadow p-4 rounded-3">
             <form onSubmit={submit}>
                 <label> First Name:</label>

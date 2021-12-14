@@ -24,20 +24,22 @@ const UserSchema = new mongoose.Schema({
         required:true,
 
     },
-    token:{
-      type:String,  
-    }
+    tokens:[{
+        token:{
+            type:String,
+        }
+   }],
 });
 
 //Encyrpting User_Password
 UserSchema.pre('save',async function(next){
 
      try{
-       const salt = await bcrypt.genSalt(10);
-
-       const hashPassword = await bcrypt.hash(this.password,salt);
-
-       this.password=hashPassword;
+    
+        if(this.isModified("password")){
+            this.password = await bcrypt.hash(this.password, 10);
+            
+        }
 
        next();
 
@@ -50,9 +52,10 @@ UserSchema.pre('save',async function(next){
 UserSchema.methods.generateAuthToken = async function(){
     try{
         const token = jwt.sign({_id:this._id},process.env.SECRET_KEY);
-        this.token =token;
-        await this.save();
-    
+        //this.token =token;
+        this.tokens = this.tokens.concat({token:token})
+        await this.save()
+        return token;
     }catch(err){
 
         console.log(err);
