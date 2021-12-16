@@ -5,7 +5,7 @@ var router = express.Router();
 const Doctor = require('../../database/models/Doctor');
 
 //Doctor SignIn Route
-router.post("/SignIn",async (req,res)=>{
+router.post("/tSignIn",async (req,res)=>{
     try{
       const email=req.body.email;
       
